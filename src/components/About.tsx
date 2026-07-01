@@ -42,7 +42,7 @@ export function About() {
             style={{ aspectRatio: "3/4", background: "var(--bg-light-alt)" }}
           >
             <Image
-              src="/works/about-photo.png"
+              src="/works/about-photo.webp"
               alt={t.photoCaption}
               fill
               sizes="(max-width: 640px) 100vw, 38vw"

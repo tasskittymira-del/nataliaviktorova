@@ -77,7 +77,7 @@ export const uk: Dictionary = {
         tags: ["AI-генерація", "New Strategies Group", "бренд-контент"],
         media: "mixed",
         galleryCount: 9,
-        cover: "graff-ai-сover.png",
+        cover: "graff-ai-сover.webp",
         lightboxDescription:
           "Робота в рамках агенції New Strategies Group / Maibutne. AI-продакшн вимагає не лише технічних навичок роботи з інструментами, а й точного відчуття бренду - я відповідала за те, щоб кожен AI-генерований кадр виглядав органічно в межах фірмового стилю GRAFF. У проєкті працювала в тісній співпраці з копірайтерами: ідеї та технічні завдання зазвичай формувала команда, я відповідала за візуальну реалізацію - AI-генерацію статики і відео під фірмовий стиль бренду, від підбору референсів до фінального рендеру. Іноді пропонувала власні ідеї в рамках загального творчого напрямку кампанії. Розвивала AI-пайплайн продакшну разом з командою, адаптуючи його під нові задачі по мірі того як змінювались інструменти й вимоги бренду.",
         gallery: [
@@ -102,7 +102,7 @@ export const uk: Dictionary = {
         tags: ["мальована анімація", "AI-пайплайн", "New Strategies Group"],
         media: "video",
         galleryCount: 4,
-        cover: "military-cover.png",
+        cover: "military-cover.webp",
         lightboxDescription:
           "Робота в рамках агенції New Strategies Group / Maibutne. Основна задача цього напрямку - зробити щось цікаве і живе, що заохотить людей вступати до служби, а не черговий формальний промо-ролик. Розробила все від ідеї до повного AI-пайплайну, свідомо обравши мальовану стилістику замість реалізму під настрій кампанії - саме такий підхід дозволяв уникнути важкості й драматизму, які часто супроводжують воєнну тематику, зберігаючи при цьому повагу до теми.",
         gallery: [
@@ -146,7 +146,7 @@ export const uk: Dictionary = {
         tags: ["AI-відео", "автоматизація", "AI-боти"],
         media: "video",
         galleryCount: 9,
-        cover: "virum-cover.png",
+        cover: "virum-cover.webp",
         lightboxDescription:
           "Відео зроблені під час роботи в Вайрум Продакшн (VIRUM). Розробила власний AI-пайплайн продакшну для роботи з великим обсягом відеоконтенту - задача, що вимагала не просто генерації окремих роликів, а побудови повторюваного, масштабованого процесу. Тестувала й впроваджувала нові інструменти та підходи по мірі їх появи на ринку, зокрема розробила AI-бота, який автоматизував частину етапів виробництва - це дозволило команді опрацьовувати значно більший обсяг контенту без втрати якості.",
         gallery: [
@@ -171,7 +171,7 @@ export const uk: Dictionary = {
         tags: ["AI-відео", "тест інструментів", "реалізм"],
         media: "reel",
         galleryCount: 12,
-        cover: "entertainment-cover.png",
+        cover: "entertainment-cover.webp",
         lightboxDescription:
           "Власний напрямок для тестування нових інструментів та підходів у реалістичній AI-генерації - без прив'язки до клієнтського продакшну. Це простір, де я можу експериментувати вільно: пробувати нові моделі генерації одразу як вони виходять, шукати межі реалістичності в AI-анімації тварин, відточувати деталі руху і освітлення які потім переносяться в комерційні проєкти. Саме тут народжуються підходи, які згодом стають частиною мого робочого пайплайну.",
         gallery: [
@@ -199,7 +199,7 @@ export const uk: Dictionary = {
         tags: ["AI-генерація", "New Strategies Group", "рекламні ролики"],
         media: "video",
         galleryCount: 6,
-        cover: "ads-series-cover.png",
+        cover: "ads-series-cover.webp",
         gallery: [
           {
             file: "ads-series-1.mp4",
@@ -255,18 +255,18 @@ export const uk: Dictionary = {
         tags: ["SMM", "бренд-контент", "New Strategies Group"],
         media: "mixed",
         galleryCount: 22,
-        cover: "graff-smm-cover.png",
+        cover: "graff-smm-cover.webp",
         gallery: [
           {
-            file: "graff-nsmm-1.png",
+            file: "graff-nsmm-1.webp",
             ratio: 0.75,
             subsectionTitle: "Оновлений візуальний стиль",
             caption:
               "Розвинула існуючу візуальну систему контенту під нові реалії бренду - зі збільшенням кількості продуктових лінійок кожна отримала власний характер і настрій: окрему колірну палітру, концепцію зображень і логіку подачі. Розробила систему використання плашок залежно від лінійки чаю - щоб різні продуктові лінійки мали чіткий і цілісний візуальний код, а споживач одразу розумів, про який продукт йдеться. Це змінило не лише естетику, а й саму механіку комунікації бренду зі споживачем.",
           },
-          { file: "graff-nsmm-2.png", ratio: 0.75 },
-          { file: "graff-nsmm-3.png", ratio: 0.75 },
-          { file: "graff-nsmm-4.png", ratio: 0.75 },
+          { file: "graff-nsmm-2.webp", ratio: 0.75 },
+          { file: "graff-nsmm-3.webp", ratio: 0.75 },
+          { file: "graff-nsmm-4.webp", ratio: 0.75 },
           { file: "graff-nsmm-5.mp4", ratio: 0.5625 },
           { file: "graff-nsmm-6.mp4", ratio: 0.5625 },
           {
@@ -276,27 +276,27 @@ export const uk: Dictionary = {
             caption:
               "До цього розвитку системи відповідала за регулярний SMM-контент бренду як дизайнер в агенції - статика, відео, різноманітні формати публікацій у щоденному ритмі бренду.",
           },
-          { file: "graff-smm-2.png", ratio: 0.75 },
+          { file: "graff-smm-2.webp", ratio: 0.75 },
           { file: "graff-smm-3.mp4", ratio: 0.5625 },
-          { file: "graff-smm-4.png", ratio: 0.8 },
+          { file: "graff-smm-4.webp", ratio: 0.8 },
           { file: "graff-smm-5.mp4", ratio: 0.5625 },
-          { file: "graff-smm-6.png", ratio: 0.75 },
+          { file: "graff-smm-6.webp", ratio: 0.75 },
           { file: "graff-smm-7.mp4", ratio: 0.5625 },
           {
-            file: "graff-c-1.png",
+            file: "graff-c-1.webp",
             ratio: 1.5001,
             subsectionTitle: "Рекламні кампанії",
             caption:
               "Окрім SMM, брала участь у рекламних кампаніях бренду в різних форматах і каналах: візуали для зовнішньої реклами (білборди, метро), матеріали для подачі на MixxAwards, а також повноцінні рекламні кампанії з набором статики і відео. Розробка та візуальна реалізація - у співпраці з командою агенції.",
           },
-          { file: "graff-c-2.png", ratio: 2.0 },
-          { file: "graff-c-3.png", ratio: 1.4139 },
-          { file: "graff-c-4.png", ratio: 1.4139 },
-          { file: "graff-c-5.jpg", ratio: 0.8 },
-          { file: "graff-c-6.jpg", ratio: 0.8 },
-          { file: "graff-c-7.jpg", ratio: 0.8 },
+          { file: "graff-c-2.webp", ratio: 2.0 },
+          { file: "graff-c-3.webp", ratio: 1.4139 },
+          { file: "graff-c-4.webp", ratio: 1.4139 },
+          { file: "graff-c-5.webp", ratio: 0.8 },
+          { file: "graff-c-6.webp", ratio: 0.8 },
+          { file: "graff-c-7.webp", ratio: 0.8 },
           { file: "graff-c-8.mp4", ratio: 0.5625 },
-          { file: "graff-c-9.png", ratio: 1.7778 },
+          { file: "graff-c-9.webp", ratio: 1.7778 },
         ],
       },
       {
@@ -309,7 +309,7 @@ export const uk: Dictionary = {
         tags: ["персонажна анімація", "ріггінг", "SMM"],
         media: "mixed",
         galleryCount: 9,
-        cover: "yagotynske-cover.png",
+        cover: "yagotynske-cover.webp",
         lightboxDescription:
           "Робота в рамках агенції New Strategies Group / Maibutne. Брала участь у розробці візуального стилю бренду на тендер у складі команди дизайнерів. Мій особистий внесок у цей колективний результат - впровадження character and environment animation through rigging як частини загальної стилістики: персонаж, об'єкти та інгредієнти отримали живий, природний рух через техніку ріггінгу, що стало однією з характерних рис бренду і виділило його серед конкурентів. Тендер виграла агенція командним зусиллям. Після затвердження стилю певний час вела SMM сторінки бренду - регулярний контент в рамках розробленої візуальної системи, де анімаційні елементи продовжували жити в щоденному контенті.",
         gallery: [
@@ -320,14 +320,14 @@ export const uk: Dictionary = {
             caption:
               "Брала участь у розробці візуального стилю бренду на тендер у складі команди дизайнерів. Мій особистий внесок - впровадження character and environment animation through rigging як частини загальної стилістики. Тендер виграла агенція командним зусиллям.",
           },
-          { file: "yagotynske-2.png", ratio: 0.5625 },
+          { file: "yagotynske-2.webp", ratio: 0.5625 },
           { file: "yagotynske-3.mp4", ratio: 0.5625 },
           { file: "yagotynske-4.mp4", ratio: 0.5625 },
           { file: "yagotynske-5.mp4", ratio: 0.5625, subsectionTitle: "SMM після тендеру" },
-          { file: "yagotynske-6.png", ratio: 0.5625 },
-          { file: "yagotynske-7.png", ratio: 0.5625 },
-          { file: "yagotynske-8.png", ratio: 0.8 },
-          { file: "yagotynske-9.png", ratio: 0.5625 },
+          { file: "yagotynske-6.webp", ratio: 0.5625 },
+          { file: "yagotynske-7.webp", ratio: 0.5625 },
+          { file: "yagotynske-8.webp", ratio: 0.8 },
+          { file: "yagotynske-9.webp", ratio: 0.5625 },
         ],
       },
       {
@@ -340,24 +340,24 @@ export const uk: Dictionary = {
         tags: ["візуальний стиль", "паперова ілюстрація", "SMM"],
         media: "mixed",
         galleryCount: 9,
-        cover: "ritz-barton-cover.png",
+        cover: "ritz-barton-cover.webp",
         lightboxDescription:
           "Робота в рамках агенції New Strategies Group / Maibutne. Розробила візуальний стиль бренду для тендеру під керівництвом арт-директора агенції. Відштовхнулась від паперової ілюстрації, яка вже була присутня на пачках продукту, і розвинула цю естетику в повноцінну візуальну стилістику для соціальних мереж - підхід, якого на той момент практично не існувало серед чайних брендів на ринку. Це дало бренду чіткий, легко впізнаваний характер, що відрізняв його від конкурентів з першого погляду. Тендер виграла агенція. Після затвердження стилю вела SMM бренду в рамках цієї системи - регулярний контент у послідовній паперовій ілюстративній естетиці.",
         gallery: [
           {
-            file: "ritz-barton-1.png",
+            file: "ritz-barton-1.webp",
             ratio: 0.5625,
             caption:
               "Розробила візуальний стиль бренду для тендеру під керівництвом арт-директора агенції. Відштовхнулась від паперової ілюстрації на пачках продукту і розвинула цю естетику в повноцінну стилістику. Тендер виграла агенція.",
           },
           { file: "ritz-barton-2.mp4", ratio: 0.5625 },
-          { file: "ritz-barton-3.png", ratio: 0.5625 },
+          { file: "ritz-barton-3.webp", ratio: 0.5625 },
           { file: "ritz-barton-4.mp4", ratio: 0.5625 },
-          { file: "ritz-barton-5.png", ratio: 0.5656 },
-          { file: "ritz-barton-6.png", ratio: 0.5625 },
-          { file: "ritz-barton-7.png", ratio: 0.8 },
-          { file: "ritz-barton-8.png", ratio: 0.5625 },
-          { file: "ritz-barton-9.png", ratio: 0.5625 },
+          { file: "ritz-barton-5.webp", ratio: 0.5656 },
+          { file: "ritz-barton-6.webp", ratio: 0.5625 },
+          { file: "ritz-barton-7.webp", ratio: 0.8 },
+          { file: "ritz-barton-8.webp", ratio: 0.5625 },
+          { file: "ritz-barton-9.webp", ratio: 0.5625 },
         ],
       },
       {
@@ -370,16 +370,16 @@ export const uk: Dictionary = {
         tags: ["SMM", "New Strategies Group", "AI-контент"],
         media: "mixed",
         galleryCount: 9,
-        cover: "dobrobut-reeva-cover.png",
+        cover: "dobrobut-reeva-cover.webp",
         lightboxDescription:
           "Робота в рамках агенції New Strategies Group / Maibutne. Іноді вела SMM для інших брендів агенції - зокрема Dobrobut і Reeva. В роботі поєднувала класичний графічний дизайн і AI-інструменти залежно від задачі і характеру кожного бренду, адаптуючи підхід під специфіку аудиторії й продукту.",
         gallery: [
           { file: "dobrobut-reeva-1.mp4", ratio: 0.5625 },
-          { file: "dobrobut-reeva-2.png", ratio: 0.8 },
+          { file: "dobrobut-reeva-2.webp", ratio: 0.8 },
           { file: "dobrobut-reeva-3.mp4", ratio: 0.5625 },
-          { file: "dobrobut-reeva-4.png", ratio: 0.5625 },
+          { file: "dobrobut-reeva-4.webp", ratio: 0.5625 },
           { file: "dobrobut-reeva-5.mp4", ratio: 0.5625 },
-          { file: "dobrobut-reeva-6.png", ratio: 0.5625 },
+          { file: "dobrobut-reeva-6.webp", ratio: 0.5625 },
           { file: "dobrobut-reeva-7.mp4", ratio: 0.5625 },
           { file: "dobrobut-reeva-8.mp4", ratio: 0.5625 },
           { file: "dobrobut-reeva-9.mp4", ratio: 0.5625 },

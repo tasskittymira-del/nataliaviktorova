@@ -77,7 +77,7 @@ export const en: Dictionary = {
         tags: ["AI generation", "New Strategies Group", "brand content"],
         media: "mixed",
         galleryCount: 9,
-        cover: "graff-ai-сover.png",
+        cover: "graff-ai-сover.webp",
         lightboxDescription:
           "Work delivered through New Strategies Group / Maibutne agency. AI production demands more than technical tool skills - it demands a precise feel for the brand. I was responsible for making every AI-generated frame look native to GRAFF's visual identity. I worked closely with copywriters: ideas and briefs were usually shaped by the team, while I handled the visual execution - AI generation of statics and video in the brand's visual style, from reference selection to final render. Occasionally proposed my own ideas within the overall creative direction of the campaign. Co-developed the AI production pipeline with the team, adapting it to new tasks as tools and brand requirements evolved.",
         gallery: [
@@ -102,7 +102,7 @@ export const en: Dictionary = {
         tags: ["painted animation", "AI pipeline", "New Strategies Group"],
         media: "video",
         galleryCount: 4,
-        cover: "military-cover.png",
+        cover: "military-cover.webp",
         lightboxDescription:
           "Work delivered through New Strategies Group / Maibutne agency. The core task of this track was to make something engaging and alive that would encourage people to enlist - not another formal promo clip. Developed everything from idea to full AI pipeline, deliberately choosing a painted style over realism to match the campaign's mood - this approach avoided the heaviness and drama that often accompanies military themes, while still respecting the subject.",
         gallery: [
@@ -146,7 +146,7 @@ export const en: Dictionary = {
         tags: ["AI video", "automation", "AI bots"],
         media: "video",
         galleryCount: 9,
-        cover: "virum-cover.png",
+        cover: "virum-cover.webp",
         lightboxDescription:
           "Videos made during work at Vairum Production (VIRUM). Built my own AI production pipeline for handling large-volume video output - a task that demanded more than generating individual clips, but building a repeatable, scalable process. Tested and rolled out new tools and approaches as they appeared on the market, including building an AI bot that automated part of the production stages - letting the team process a much larger volume of content without losing quality.",
         gallery: [
@@ -171,7 +171,7 @@ export const en: Dictionary = {
         tags: ["AI video", "tool testing", "realism"],
         media: "reel",
         galleryCount: 12,
-        cover: "entertainment-cover.png",
+        cover: "entertainment-cover.webp",
         lightboxDescription:
           "A personal track for testing new tools and approaches in realistic AI generation - not tied to client production. It's a space where I can experiment freely: trying new generation models as soon as they launch, pushing the limits of realism in AI animal animation, refining the details of movement and lighting that later carry over into commercial projects. This is where the approaches that eventually become part of my working pipeline are born.",
         gallery: [
@@ -199,7 +199,7 @@ export const en: Dictionary = {
         tags: ["AI generation", "New Strategies Group", "ad clips"],
         media: "video",
         galleryCount: 6,
-        cover: "ads-series-cover.png",
+        cover: "ads-series-cover.webp",
         gallery: [
           {
             file: "ads-series-1.mp4",
@@ -255,18 +255,18 @@ export const en: Dictionary = {
         tags: ["SMM", "brand content", "New Strategies Group"],
         media: "mixed",
         galleryCount: 22,
-        cover: "graff-smm-cover.png",
+        cover: "graff-smm-cover.webp",
         gallery: [
           {
-            file: "graff-nsmm-1.png",
+            file: "graff-nsmm-1.webp",
             ratio: 0.75,
             subsectionTitle: "Updated visual style",
             caption:
               "Developed the existing visual content system to match the brand's new reality - as the number of product lines grew, each got its own character and mood: a separate color palette, image concept, and presentation logic. Developed a tag system tied to each tea line, so different product lines carried a clear, cohesive visual code and the consumer instantly knew which product was being shown. This changed not just the aesthetic, but the brand's whole mechanism of communicating with the consumer.",
           },
-          { file: "graff-nsmm-2.png", ratio: 0.75 },
-          { file: "graff-nsmm-3.png", ratio: 0.75 },
-          { file: "graff-nsmm-4.png", ratio: 0.75 },
+          { file: "graff-nsmm-2.webp", ratio: 0.75 },
+          { file: "graff-nsmm-3.webp", ratio: 0.75 },
+          { file: "graff-nsmm-4.webp", ratio: 0.75 },
           { file: "graff-nsmm-5.mp4", ratio: 0.5625 },
           { file: "graff-nsmm-6.mp4", ratio: 0.5625 },
           {
@@ -276,27 +276,27 @@ export const en: Dictionary = {
             caption:
               "Before this system development, I was responsible for the brand's regular SMM content as a designer at the agency - statics, video, and a range of post formats within the brand's daily rhythm.",
           },
-          { file: "graff-smm-2.png", ratio: 0.75 },
+          { file: "graff-smm-2.webp", ratio: 0.75 },
           { file: "graff-smm-3.mp4", ratio: 0.5625 },
-          { file: "graff-smm-4.png", ratio: 0.8 },
+          { file: "graff-smm-4.webp", ratio: 0.8 },
           { file: "graff-smm-5.mp4", ratio: 0.5625 },
-          { file: "graff-smm-6.png", ratio: 0.75 },
+          { file: "graff-smm-6.webp", ratio: 0.75 },
           { file: "graff-smm-7.mp4", ratio: 0.5625 },
           {
-            file: "graff-c-1.png",
+            file: "graff-c-1.webp",
             ratio: 1.5001,
             subsectionTitle: "Ad campaigns",
             caption:
               "Besides SMM, took part in the brand's ad campaigns across formats and channels: visuals for outdoor advertising (billboards, metro), materials for a MixxAwards submission, and full ad campaigns with static and video sets. Development and execution in collaboration with the agency team.",
           },
-          { file: "graff-c-2.png", ratio: 2.0 },
-          { file: "graff-c-3.png", ratio: 1.4139 },
-          { file: "graff-c-4.png", ratio: 1.4139 },
-          { file: "graff-c-5.jpg", ratio: 0.8 },
-          { file: "graff-c-6.jpg", ratio: 0.8 },
-          { file: "graff-c-7.jpg", ratio: 0.8 },
+          { file: "graff-c-2.webp", ratio: 2.0 },
+          { file: "graff-c-3.webp", ratio: 1.4139 },
+          { file: "graff-c-4.webp", ratio: 1.4139 },
+          { file: "graff-c-5.webp", ratio: 0.8 },
+          { file: "graff-c-6.webp", ratio: 0.8 },
+          { file: "graff-c-7.webp", ratio: 0.8 },
           { file: "graff-c-8.mp4", ratio: 0.5625 },
-          { file: "graff-c-9.png", ratio: 1.7778 },
+          { file: "graff-c-9.webp", ratio: 1.7778 },
         ],
       },
       {
@@ -309,7 +309,7 @@ export const en: Dictionary = {
         tags: ["character animation", "rigging", "SMM"],
         media: "mixed",
         galleryCount: 9,
-        cover: "yagotynske-cover.png",
+        cover: "yagotynske-cover.webp",
         lightboxDescription:
           "Work delivered through New Strategies Group / Maibutne agency. Took part in developing the brand's visual identity for a pitch as part of a team of designers. My personal contribution to this collective result - introducing character and environment animation through rigging as part of the overall style: the character, objects, and ingredients got a living, natural movement through rigging, which became one of the brand's signature traits and set it apart from competitors. The agency won the pitch as a team effort. After the style was approved, I ran the brand's SMM for a while - regular content within the developed visual system, where the animated elements continued to live on in the daily content.",
         gallery: [
@@ -320,14 +320,14 @@ export const en: Dictionary = {
             caption:
               "Participated in developing the brand's visual identity for a pitch as part of a team. My personal contribution - introducing character and environment animation through rigging as part of the overall style. The agency won the pitch as a team effort.",
           },
-          { file: "yagotynske-2.png", ratio: 0.5625 },
+          { file: "yagotynske-2.webp", ratio: 0.5625 },
           { file: "yagotynske-3.mp4", ratio: 0.5625 },
           { file: "yagotynske-4.mp4", ratio: 0.5625 },
           { file: "yagotynske-5.mp4", ratio: 0.5625, subsectionTitle: "SMM after the pitch" },
-          { file: "yagotynske-6.png", ratio: 0.5625 },
-          { file: "yagotynske-7.png", ratio: 0.5625 },
-          { file: "yagotynske-8.png", ratio: 0.8 },
-          { file: "yagotynske-9.png", ratio: 0.5625 },
+          { file: "yagotynske-6.webp", ratio: 0.5625 },
+          { file: "yagotynske-7.webp", ratio: 0.5625 },
+          { file: "yagotynske-8.webp", ratio: 0.8 },
+          { file: "yagotynske-9.webp", ratio: 0.5625 },
         ],
       },
       {
@@ -340,24 +340,24 @@ export const en: Dictionary = {
         tags: ["visual identity", "paper illustration", "SMM"],
         media: "mixed",
         galleryCount: 9,
-        cover: "ritz-barton-cover.png",
+        cover: "ritz-barton-cover.webp",
         lightboxDescription:
           "Work delivered through New Strategies Group / Maibutne agency. Developed the brand's visual identity for the pitch under the art director's guidance. Started from the paper illustration already present on the product packaging and developed that aesthetic into a full visual style for social media - an approach that barely existed among tea brands on the market at the time. This gave the brand a clear, instantly recognizable character that set it apart from competitors at a glance. The agency won the pitch. After the style was approved, I ran the brand's SMM within this system - regular content in a consistent paper-illustration aesthetic.",
         gallery: [
           {
-            file: "ritz-barton-1.png",
+            file: "ritz-barton-1.webp",
             ratio: 0.5625,
             caption:
               "Developed the brand's visual identity for the pitch under the art director's guidance. Started from the paper illustration on the product packaging and developed that aesthetic into a full style. The agency won the pitch.",
           },
           { file: "ritz-barton-2.mp4", ratio: 0.5625 },
-          { file: "ritz-barton-3.png", ratio: 0.5625 },
+          { file: "ritz-barton-3.webp", ratio: 0.5625 },
           { file: "ritz-barton-4.mp4", ratio: 0.5625 },
-          { file: "ritz-barton-5.png", ratio: 0.5656 },
-          { file: "ritz-barton-6.png", ratio: 0.5625 },
-          { file: "ritz-barton-7.png", ratio: 0.8 },
-          { file: "ritz-barton-8.png", ratio: 0.5625 },
-          { file: "ritz-barton-9.png", ratio: 0.5625 },
+          { file: "ritz-barton-5.webp", ratio: 0.5656 },
+          { file: "ritz-barton-6.webp", ratio: 0.5625 },
+          { file: "ritz-barton-7.webp", ratio: 0.8 },
+          { file: "ritz-barton-8.webp", ratio: 0.5625 },
+          { file: "ritz-barton-9.webp", ratio: 0.5625 },
         ],
       },
       {
@@ -370,16 +370,16 @@ export const en: Dictionary = {
         tags: ["SMM", "New Strategies Group", "AI content"],
         media: "mixed",
         galleryCount: 9,
-        cover: "dobrobut-reeva-cover.png",
+        cover: "dobrobut-reeva-cover.webp",
         lightboxDescription:
           "Work delivered through New Strategies Group / Maibutne agency. Occasionally ran SMM for other agency brands - including Dobrobut and Reeva. Combined classic graphic design and AI tools depending on the task and character of each brand, adapting the approach to the specifics of the audience and product.",
         gallery: [
           { file: "dobrobut-reeva-1.mp4", ratio: 0.5625 },
-          { file: "dobrobut-reeva-2.png", ratio: 0.8 },
+          { file: "dobrobut-reeva-2.webp", ratio: 0.8 },
           { file: "dobrobut-reeva-3.mp4", ratio: 0.5625 },
-          { file: "dobrobut-reeva-4.png", ratio: 0.5625 },
+          { file: "dobrobut-reeva-4.webp", ratio: 0.5625 },
           { file: "dobrobut-reeva-5.mp4", ratio: 0.5625 },
-          { file: "dobrobut-reeva-6.png", ratio: 0.5625 },
+          { file: "dobrobut-reeva-6.webp", ratio: 0.5625 },
           { file: "dobrobut-reeva-7.mp4", ratio: 0.5625 },
           { file: "dobrobut-reeva-8.mp4", ratio: 0.5625 },
           { file: "dobrobut-reeva-9.mp4", ratio: 0.5625 },
