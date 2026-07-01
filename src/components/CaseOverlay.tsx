@@ -146,7 +146,7 @@ function Tile({
           <img
             src={`/works/${item.file}`}
             alt=""
-            loading="lazy"
+            loading="eager"
             draggable={false}
             onContextMenu={noContextMenu}
             className="h-full w-full object-cover"
