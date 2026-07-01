@@ -26,6 +26,7 @@ function isLandscapeTile(item: GalleryItem) {
 /* ─── GalleryVideo ──────────────────────────────────────────────────────────── */
 
 function GalleryVideo({ src, active }: { src: string; active: boolean }) {
+  const poster = src.replace(/\.(mp4|mov|webm)$/i, "-poster.webp");
   const ref = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
 
@@ -44,6 +45,7 @@ function GalleryVideo({ src, active }: { src: string; active: boolean }) {
         muted={muted}
         loop
         playsInline
+        poster={poster}
         preload="metadata"
         disablePictureInPicture
         controlsList="nodownload"
