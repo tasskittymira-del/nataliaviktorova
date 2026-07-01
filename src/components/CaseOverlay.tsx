@@ -33,9 +33,18 @@ function GalleryVideo({ src, active }: { src: string; active: boolean }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (active) el.play().catch(() => {});
-    else { el.pause(); el.currentTime = 0; }
-  }, [active]);
+    if (active) {
+      el.muted = muted;
+      el.play().catch(() => {});
+    } else {
+      el.pause();
+      el.currentTime = 0;
+    }
+  }, [active]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (ref.current) ref.current.muted = muted;
+  }, [muted]);
 
   return (
     <div className="group/vid relative h-full w-full">
