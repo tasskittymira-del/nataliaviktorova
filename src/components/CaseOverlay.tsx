@@ -23,61 +23,6 @@ function isLandscapeTile(item: GalleryItem) {
   return item.ratio > 1.2;
 }
 
-/* ─── GalleryVideo ──────────────────────────────────────────────────────────── */
-
-function GalleryVideo({ src, active }: { src: string; active: boolean }) {
-  const poster = src.replace(/\.(mp4|mov|webm)$/i, "-poster.webp");
-  const ref = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (active) {
-      el.muted = muted;
-      el.play().catch(() => {});
-    } else {
-      el.pause();
-      el.currentTime = 0;
-    }
-  }, [active]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    if (ref.current) ref.current.muted = muted;
-  }, [muted]);
-
-  return (
-    <div className="group/vid relative h-full w-full">
-      <video
-        ref={ref}
-        src={src}
-        muted={muted}
-        loop
-        playsInline
-        poster={poster}
-        preload="metadata"
-        disablePictureInPicture
-        controlsList="nodownload"
-        onContextMenu={noContextMenu}
-        className="h-full w-full object-cover"
-      />
-      {!active && (
-        <div className="pointer-events-none absolute bottom-2 left-2">
-          <Play size={10} color="#fff" fill="#fff" strokeWidth={0} style={{ opacity: 0.8 }} />
-        </div>
-      )}
-      <button
-        onClick={(e) => { e.stopPropagation(); setMuted(m => !m); }}
-        className={`absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full transition-opacity sm:h-7 sm:w-7 ${active ? "opacity-100" : "opacity-0 group-hover/vid:opacity-100"}`}
-        style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)", color: "#fff" }}
-        aria-label={muted ? "Sound on" : "Sound off"}
-      >
-        {muted ? <VolumeX size={15} strokeWidth={1.75} /> : <Volume2 size={15} strokeWidth={1.75} />}
-      </button>
-    </div>
-  );
-}
-
 /* ─── Tile ──────────────────────────────────────────────────────────────────── */
 
 function Tile({
@@ -90,50 +35,103 @@ function Tile({
   clipRef: React.RefObject<HTMLDivElement | null>;
   isTouch: boolean;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const tileRef     = useRef<HTMLDivElement>(null);
+  const videoRef    = useRef<HTMLVideoElement>(null);
+  const pendingPlay = useRef<Promise<void> | null>(null);
   const [origin, setOrigin] = useState("center center");
+  const [muted,  setMuted]  = useState(true);
 
   const isHovered    = hoveredIndex === index;
   const isAnyHovered = hoveredIndex !== null;
+  const isVid        = isVideo(item.file);
+  const poster       = isVid
+    ? `/works/${item.file}`.replace(/\.(mp4|mov|webm)$/i, "-poster.webp")
+    : "";
 
-  // On touch devices scale stays 1 (no zoom on tap — no clipping boundary available).
-  // On desktop: landscape tiles zoom less than portrait/square tiles.
   const SCALE = isTouch ? 1 : (isLandscapeTile(item) ? 1.04 : 1.15);
 
-  const handleEnter = useCallback(() => {
-    if (!isTouch && ref.current && clipRef.current) {
-      const rect  = ref.current.getBoundingClientRect();
-      const col   = clipRef.current.getBoundingClientRect();
-      const growW = (rect.width  * SCALE - rect.width)  / 2;
-      const growH = (rect.height * SCALE - rect.height) / 2;
+  // Keep DOM muted property in sync (React's muted prop only sets the initial attribute)
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.muted = muted;
+  }, [muted]);
 
-      const ox = rect.left - col.left    < growW ? "left"
-               : col.right - rect.right  < growW ? "right" : "center";
-      const oy = rect.top  - col.top     < growH ? "top"
-               : col.bottom - rect.bottom < growH ? "bottom" : "center";
-      setOrigin(`${ox} ${oy}`);
-    }
+  // Start playback. Called synchronously inside event handlers so iOS Safari
+  // recognises the user gesture and allows autoplay.
+  const doPlay = useCallback(() => {
+    const el = videoRef.current;
+    if (!el || !isVid) return;
+    el.muted = true; // must be muted for autoplay policy; user can unmute after
+    const p = el.play();
+    pendingPlay.current = p ?? null;
+    p?.catch((err) => {
+      if (err.name === "AbortError") return; // normal on rapid hover — ignore
+      // Video not loaded yet: retry when the browser has enough data
+      el.addEventListener("canplay", () => {
+        el.muted = true;
+        el.play().catch(() => {});
+      }, { once: true });
+    });
+  }, [isVid]);
+
+  // Pause safely. If play() is still pending (buffering), we must wait for it
+  // to settle before calling pause() — otherwise the browser throws AbortError
+  // and the video keeps playing.
+  const doPause = useCallback(() => {
+    const el = videoRef.current;
+    if (!el || !isVid) return;
+    const p = pendingPlay.current;
+    pendingPlay.current = null;
+    const pause = () => { el.pause(); el.currentTime = 0; };
+    if (p) p.then(pause).catch(() => {}); else pause();
+  }, [isVid]);
+
+  const calcOrigin = useCallback(() => {
+    if (isTouch || !tileRef.current || !clipRef.current) return;
+    const rect  = tileRef.current.getBoundingClientRect();
+    const col   = clipRef.current.getBoundingClientRect();
+    const growW = (rect.width  * SCALE - rect.width)  / 2;
+    const growH = (rect.height * SCALE - rect.height) / 2;
+    const ox = rect.left - col.left    < growW ? "left"
+             : col.right - rect.right  < growW ? "right" : "center";
+    const oy = rect.top  - col.top     < growH ? "top"
+             : col.bottom - rect.bottom < growH ? "bottom" : "center";
+    setOrigin(`${ox} ${oy}`);
+  }, [isTouch, clipRef, SCALE]);
+
+  const handleMouseEnter = useCallback(() => {
+    calcOrigin();
+    doPlay();
     onHover(index);
-  }, [index, onHover, clipRef, SCALE, isTouch]);
+  }, [calcOrigin, doPlay, onHover, index]);
 
+  const handleMouseLeave = useCallback(() => {
+    doPause();
+    onHover(null);
+  }, [doPause, onHover]);
+
+  // On mobile, onClick IS inside a user-gesture context, so doPlay() called
+  // here will be allowed by iOS Safari's autoplay policy.
   const handleTap = useCallback(() => {
-    // Toggle: tap active tile to deselect, tap new tile to select
-    if (hoveredIndex === index) onHover(null);
-    else handleEnter();
-  }, [hoveredIndex, index, onHover, handleEnter]);
+    if (hoveredIndex === index) {
+      doPause();
+      onHover(null);
+    } else {
+      calcOrigin();
+      doPlay();
+      onHover(index);
+    }
+  }, [hoveredIndex, index, calcOrigin, doPlay, doPause, onHover]);
 
   return (
     <motion.div
-      ref={ref}
+      ref={tileRef}
       animate={{
         scale:  isHovered ? SCALE : 1,
         filter: isAnyHovered && !isHovered ? "brightness(0.35)" : "brightness(1)",
       }}
       transition={{ duration: isTouch ? 0.2 : 0.45, ease: [0.16, 1, 0.3, 1] }}
-      // Desktop: hover to activate / leave to deactivate
-      onMouseEnter={isTouch ? undefined : handleEnter}
-      onMouseLeave={isTouch ? undefined : () => onHover(null)}
-      // Mobile: tap to toggle
+      onMouseEnter={isTouch ? undefined : handleMouseEnter}
+      onMouseLeave={isTouch ? undefined : handleMouseLeave}
       onClick={isTouch ? handleTap : undefined}
       style={{
         width: "100%",
@@ -150,20 +148,46 @@ function Tile({
         display: "block",
       }}
     >
-      {isVideo(item.file)
-        ? <GalleryVideo src={`/works/${item.file}`} active={isHovered} />
-        : (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+      {isVid ? (
+        <div className="group/vid relative h-full w-full">
+          <video
+            ref={videoRef}
             src={`/works/${item.file}`}
-            alt=""
-            loading="eager"
-            draggable={false}
+            muted /* initial attribute — must be true for autoplay on iOS/Safari */
+            loop
+            playsInline
+            poster={poster}
+            preload="none" /* poster covers visuals; load only when play() is called */
+            disablePictureInPicture
+            controlsList="nodownload"
             onContextMenu={noContextMenu}
             className="h-full w-full object-cover"
           />
-        )
-      }
+          {!isHovered && (
+            <div className="pointer-events-none absolute bottom-2 left-2">
+              <Play size={10} color="#fff" fill="#fff" strokeWidth={0} style={{ opacity: 0.8 }} />
+            </div>
+          )}
+          <button
+            onClick={(e) => { e.stopPropagation(); setMuted(m => !m); }}
+            className={`absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full transition-opacity sm:h-7 sm:w-7 ${isHovered ? "opacity-100" : "opacity-0 group-hover/vid:opacity-100"}`}
+            style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)", color: "#fff" }}
+            aria-label={muted ? "Sound on" : "Sound off"}
+          >
+            {muted ? <VolumeX size={15} strokeWidth={1.75} /> : <Volume2 size={15} strokeWidth={1.75} />}
+          </button>
+        </div>
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`/works/${item.file}`}
+          alt=""
+          loading="eager"
+          draggable={false}
+          onContextMenu={noContextMenu}
+          className="h-full w-full object-cover"
+        />
+      )}
     </motion.div>
   );
 }
