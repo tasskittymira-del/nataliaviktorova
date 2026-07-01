@@ -44,7 +44,7 @@ function GalleryVideo({ src, active }: { src: string; active: boolean }) {
         muted={muted}
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         disablePictureInPicture
         controlsList="nodownload"
         onContextMenu={noContextMenu}
@@ -57,7 +57,7 @@ function GalleryVideo({ src, active }: { src: string; active: boolean }) {
       )}
       <button
         onClick={(e) => { e.stopPropagation(); setMuted(m => !m); }}
-        className="absolute bottom-2 right-2 opacity-0 transition-opacity group-hover/vid:opacity-100 sm:opacity-0"
+        className={`absolute bottom-2 right-2 transition-opacity ${active ? "opacity-100" : "opacity-0 group-hover/vid:opacity-100"}`}
         style={{ color: "#fff", filter: "drop-shadow(0 1px 3px rgba(0,0,0,.5))" }}
         aria-label={muted ? "Sound on" : "Sound off"}
       >

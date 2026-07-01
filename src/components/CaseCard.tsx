@@ -8,15 +8,9 @@ import { CaseOverlay } from "./CaseOverlay";
 function preloadGallery(caseStudy: CaseStudy) {
   const gallery = caseStudy.gallery ?? [];
   gallery.forEach((item) => {
-    if (/\.(mp4|mov|webm)$/i.test(item.file)) {
-      // Preload video metadata so first frame shows instantly on open
-      const v = document.createElement("video");
-      v.preload = "metadata";
-      v.src = `/works/${item.file}`;
-    } else {
-      const img = new window.Image();
-      img.src = `/works/${item.file}`;
-    }
+    if (/\.(mp4|mov|webm)$/i.test(item.file)) return;
+    const img = new window.Image();
+    img.src = `/works/${item.file}`;
   });
 }
 
