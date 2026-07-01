@@ -44,7 +44,7 @@ function GalleryVideo({ src, active }: { src: string; active: boolean }) {
         muted={muted}
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         disablePictureInPicture
         controlsList="nodownload"
         onContextMenu={noContextMenu}
