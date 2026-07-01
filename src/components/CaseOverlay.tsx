@@ -57,11 +57,11 @@ function GalleryVideo({ src, active }: { src: string; active: boolean }) {
       )}
       <button
         onClick={(e) => { e.stopPropagation(); setMuted(m => !m); }}
-        className={`absolute bottom-2 right-2 transition-opacity ${active ? "opacity-100" : "opacity-0 group-hover/vid:opacity-100"}`}
-        style={{ color: "#fff", filter: "drop-shadow(0 1px 3px rgba(0,0,0,.5))" }}
+        className={`absolute bottom-2 right-2 flex h-8 w-8 items-center justify-center rounded-full transition-opacity sm:h-7 sm:w-7 ${active ? "opacity-100" : "opacity-0 group-hover/vid:opacity-100"}`}
+        style={{ background: "rgba(0,0,0,0.45)", backdropFilter: "blur(6px)", color: "#fff" }}
         aria-label={muted ? "Sound on" : "Sound off"}
       >
-        {muted ? <VolumeX size={13} strokeWidth={1.75} /> : <Volume2 size={13} strokeWidth={1.75} />}
+        {muted ? <VolumeX size={15} strokeWidth={1.75} /> : <Volume2 size={15} strokeWidth={1.75} />}
       </button>
     </div>
   );
@@ -298,12 +298,12 @@ export function CaseOverlay({ isOpen, onClose, caseStudy, roleLabel }: {
             {/* ── Close button — always visible at top-right on all devices ── */}
             <button
               onClick={onClose}
-              className="fixed right-4 top-4 z-[110] flex h-10 w-10 items-center justify-center rounded-full transition-colors sm:absolute sm:right-10 sm:top-14"
+              className="fixed right-4 top-4 z-[110] flex h-10 w-10 items-center justify-center rounded-full transition-all hover:scale-110 sm:absolute sm:right-10 sm:top-14"
               style={{
-                background: "rgba(255,255,255,0.9)",
-                backdropFilter: "blur(8px)",
-                color: "var(--fg-light-faint)",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                background: "rgba(255,255,255,0.95)",
+                backdropFilter: "blur(10px)",
+                color: "var(--fg-light)",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.15), 0 0 0 1px rgba(26,7,6,0.08)",
               }}
               aria-label="Close"
             >
