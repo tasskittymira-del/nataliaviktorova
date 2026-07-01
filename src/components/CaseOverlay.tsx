@@ -60,12 +60,11 @@ function Tile({
   const doPlay = useCallback(() => {
     const el = videoRef.current;
     if (!el || !isVid) return;
-    el.muted = true; // must be muted for autoplay policy; user can unmute after
+    el.muted = true;
     const p = el.play();
     pendingPlay.current = p ?? null;
     p?.catch((err) => {
-      if (err.name === "AbortError") return; // normal on rapid hover — ignore
-      // Video not loaded yet: retry when the browser has enough data
+      if (err.name === "AbortError") return;
       el.addEventListener("canplay", () => {
         el.muted = true;
         el.play().catch(() => {});
@@ -73,17 +72,23 @@ function Tile({
     });
   }, [isVid]);
 
-  // Pause safely. If play() is still pending (buffering), we must wait for it
-  // to settle before calling pause() — otherwise the browser throws AbortError
-  // and the video keeps playing.
+  // Pause safely — must wait for any pending play() promise before pausing,
+  // otherwise the browser throws AbortError and ignores the pause.
   const doPause = useCallback(() => {
     const el = videoRef.current;
     if (!el || !isVid) return;
     const p = pendingPlay.current;
     pendingPlay.current = null;
     const pause = () => { el.pause(); el.currentTime = 0; };
-    if (p) p.then(pause).catch(() => {}); else pause();
+    if (p) p.then(pause).catch(pause); else pause();
   }, [isVid]);
+
+  // Stop video whenever this tile is no longer the active one.
+  // This handles mobile: when user taps tile B, tile A's isHovered becomes
+  // false and this effect stops tile A without needing an explicit pause call.
+  useEffect(() => {
+    if (!isHovered) doPause();
+  }, [isHovered]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const calcOrigin = useCallback(() => {
     if (isTouch || !tileRef.current || !clipRef.current) return;
@@ -157,7 +162,7 @@ function Tile({
             loop
             playsInline
             poster={poster}
-            preload="none" /* poster covers visuals; load only when play() is called */
+            preload="metadata" /* loads first frame + duration; poster shows until ready */
             disablePictureInPicture
             controlsList="nodownload"
             onContextMenu={noContextMenu}
