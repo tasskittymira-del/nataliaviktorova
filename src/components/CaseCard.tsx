@@ -1,9 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import type { CaseStudy } from "@/lib/content";
 import { CaseOverlay } from "./CaseOverlay";
+
+function preloadGallery(caseStudy: CaseStudy) {
+  const gallery = caseStudy.gallery ?? [];
+  gallery.forEach((item) => {
+    if (/\.(mp4|mov|webm)$/i.test(item.file)) return;
+    const img = new window.Image();
+    img.src = `/works/${item.file}`;
+  });
+}
 
 export function CaseCard({
   caseStudy,
@@ -15,12 +24,21 @@ export function CaseCard({
   viewWorksLabel: string;
 }) {
   const [open, setOpen] = useState(false);
+  const preloaded = useRef(false);
+
+  const handleMouseEnter = useCallback(() => {
+    if (preloaded.current) return;
+    preloaded.current = true;
+    preloadGallery(caseStudy);
+  }, [caseStudy]);
 
   return (
     <>
       <article
         className="group flex cursor-pointer flex-col overflow-hidden rounded-2xl transition-colors duration-300"
         style={{ background: "var(--bg-light)", border: "1px solid rgba(255,255,255,0.08)" }}
+        onMouseEnter={handleMouseEnter}
+        onTouchStart={handleMouseEnter}
         onClick={() => setOpen(true)}
       >
         {/* Cover */}
