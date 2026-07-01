@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark surfaces (Hero, Contact, Nav) */
+  --bg: #0c0201;
+  --bg-alt: #160403;
+  --bg-surface: #1e0605;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --fg: #ffffff;
+  --fg-muted: rgba(255, 255, 255, 0.55);
+  --fg-faint: rgba(255, 255, 255, 0.28);
+  --border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.08);
+
+  /* Light surfaces (About, Portfolio, Principles) */
+  --bg-light: #ffffff;
+  --bg-light-alt: #f7f5f3;
+  --fg-light: #1a0706;
+  --fg-light-muted: rgba(26, 7, 6, 0.55);
+  --fg-light-faint: rgba(26, 7, 6, 0.3);
+  --border-light: rgba(26, 7, 6, 0.1);
+
+  --accent: #8C0804;
+  --accent-2: #B5121B;
+  --accent-soft: rgba(140, 8, 4, 0.12);
+  --accent-strong: #5E0303;
+  --accent-glow: rgba(140, 8, 4, 0.35);
+  --accent-gold: #C9A227;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-card: var(--bg-card);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-faint: var(--fg-faint);
+  --color-border: var(--border);
+
+  --color-bg-light: var(--bg-light);
+  --color-bg-light-alt: var(--bg-light-alt);
+  --color-fg-light: var(--fg-light);
+  --color-fg-light-muted: var(--fg-light-muted);
+  --color-fg-light-faint: var(--fg-light-faint);
+  --color-border-light: var(--border-light);
+
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-gold: var(--accent-gold);
+
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-unbounded);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.label-caps {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+
+.glass {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: inset 0 1px 0 0 var(--glass-highlight);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  color: var(--fg-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
