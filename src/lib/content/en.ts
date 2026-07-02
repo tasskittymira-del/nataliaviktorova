@@ -175,6 +175,7 @@ export const en: Dictionary = {
         lightboxDescription:
           "A personal track for testing new tools and approaches in realistic AI generation - not tied to client production. It's a space where I can experiment freely: trying new generation models as soon as they launch, pushing the limits of realism in AI animal animation, refining the details of movement and lighting that later carry over into commercial projects. This is where the approaches that eventually become part of my working pipeline are born.",
         gallery: [
+          { file: "entertainment-13.mp4", ratio: 1.7778 },
           { file: "entertainment-1.mp4", ratio: 0.5625 },
           { file: "entertainment-2.mp4", ratio: 0.5625 },
           { file: "entertainment-3.mp4", ratio: 0.5625 },
